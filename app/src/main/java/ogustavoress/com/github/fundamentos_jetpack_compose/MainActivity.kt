@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TextoCustomizado(texto: String, modifier: Modifier) {
+fun TextoCustomizado(texto: String, modifier: Modifier = Modifier) {
     Text(
         text = texto,
         modifier = modifier
