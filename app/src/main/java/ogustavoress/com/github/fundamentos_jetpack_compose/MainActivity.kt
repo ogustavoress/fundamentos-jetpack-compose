@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import ogustavoress.com.github.fundamentos_jetpack_compose.ui.theme.FundamentosjetpackcomposeTheme
 
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
                         "Primeira função composable",
                         modifier = Modifier.padding(innerPadding)
                     )
-
+                    Inicial(Modifier.padding(innerPadding))
 
                 }
             }
@@ -33,9 +34,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun Inicial(modifier: Modifier) {
+    TextoCustomizado("Primeira função composable", modifier)
+    TextoCustomizado("Seja bem-vindo", modifier)
+    TextoCustomizado("Olá, usuário", modifier)
+}
+
+@Composable
 fun TextoCustomizado(texto: String, modifier: Modifier = Modifier) {
     Text(
         text = texto,
+        color = Color.Red,
         modifier = modifier
     )
 
@@ -43,8 +52,8 @@ fun TextoCustomizado(texto: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun Preview() {
+fun PreviewFuncaoInicial() {
     FundamentosjetpackcomposeTheme {
-        TextoCustomizado("Primeira função composable")
+        Inicial()
     }
 }
