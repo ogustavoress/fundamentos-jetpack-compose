@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Inicial(modifier: Modifier) {
+fun Inicial(modifier: Modifier = Modifier) {
     Column (modifier = modifier.background(color = Color.Blue)){
         TextoCustomizado("Primeira função composable")
         TextoCustomizado("Seja bem-vindo")
@@ -52,6 +52,14 @@ fun Inicial(modifier: Modifier) {
             TextoCustomizado("Seja bem-vindo")
             TextoCustomizado("Olá, usuário")
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewFuncaoInicial() {
+    FundamentosjetpackcomposeTheme {
+        Inicial()
     }
 }
 
@@ -75,6 +83,12 @@ fun NotificationBadge(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun PreviewNotificationBadge(){
+    FundamentosjetpackcomposeTheme {
+        NotificationBadge()
+    }
+}
 
 @Composable
 fun TextoCustomizado(texto: String, modifier: Modifier = Modifier) {
@@ -86,17 +100,3 @@ fun TextoCustomizado(texto: String, modifier: Modifier = Modifier) {
 
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewFuncaoInicial() {
-    FundamentosjetpackcomposeTheme {
-        Inicial()
-    }
-}
-
-@Composable
-fun PreviewNotificationBadge(){
-    FundamentosjetpackcomposeTheme {
-        NotificationBadge()
-    }
-}
