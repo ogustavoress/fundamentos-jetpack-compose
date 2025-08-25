@@ -20,7 +20,9 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Normal
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ogustavoress.com.github.fundamentos_jetpack_compose.R
 
@@ -73,10 +75,29 @@ fun DifferentFont(){
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        Text(text = "Edu NSWACT Cursive regular", fontFamily = fontFamilyEDU, fontWeight = FontWeight.Normal)
-        Text(text = "Edu NSWACT Cursive medium", fontFamily = fontFamilyEDU, fontWeight = FontWeight.Medium)
-        Text(text = "Edu NSWACT Cursive semibold", fontFamily = fontFamilyEDU, fontWeight = FontWeight.SemiBold)
-        Text(text = "Edu NSWACT Cursive bold", fontFamily = fontFamilyEDU, fontWeight = FontWeight.Bold)
+        Text(
+            text = "Edu NSWACT Cursive regular. Eu preciso colocar um texto gigante neste local",
+            fontFamily = fontFamilyEDU,
+            fontWeight = FontWeight.Normal,
+            maxLines = 1
+        )
+        Text(
+            text = "Edu NSWACT Cursive medium. Eu preciso colocar um texto gigante neste local",
+            fontFamily = fontFamilyEDU,
+            fontWeight = FontWeight.Medium,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
+        )
+        Text(
+            text = "Edu NSWACT Cursive semibold",
+            fontFamily = fontFamilyEDU,
+            fontWeight = FontWeight.SemiBold,
+        )
+        Text(
+            text = "Edu NSWACT Cursive bold",
+            fontFamily = fontFamilyEDU,
+            fontWeight = FontWeight.Bold
+        )
 
     }
 }
