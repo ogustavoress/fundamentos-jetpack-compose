@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -60,6 +62,34 @@ fun Inicial(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun TesteModifier(){
+    Column {
+        Text(
+            text = "Item 1",
+            modifier = Modifier
+                .border(border = BorderStroke(width = 1.dp, color = Color.Green))
+                .padding(horizontal = 8.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "Item 2",
+            modifier = Modifier
+                .border(border = BorderStroke(width = 1.dp, color = Color.Green))
+                .padding(horizontal = 8.dp, vertical = 8.dp)
+        )
+
+        Text(
+            text = "Item 2",
+            modifier = Modifier
+                .padding(horizontal = 8.dp)
+                .border(border = BorderStroke(width = 1.dp, color = Color.Green))
+        )
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewFuncaoInicial() {
@@ -67,6 +97,8 @@ fun PreviewFuncaoInicial() {
         Inicial()
     }
 }
+
+
 
 @Composable
 fun NotificationBadge(modifier: Modifier = Modifier) {
