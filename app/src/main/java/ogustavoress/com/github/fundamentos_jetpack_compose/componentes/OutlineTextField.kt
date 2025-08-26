@@ -12,18 +12,25 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Preview
 @Composable
-fun SimpleTextField(padding: Modifier) {
+fun SimpleOutlineTextField(padding: Modifier) {
     var text by remember {
         mutableStateOf("")
     }
+    var isError by remember {
+        mutableStateOf(false)
+    }
+
     TextField(
         modifier = Modifier,
         value = text,
         onValueChange = {
-            novoValorDigitado : String -> text = novoValorDigitado
+                novoValorDigitado : String ->
+            text = novoValorDigitado
+            isError = novoValorDigitado.contains("0")
         },
         label = {
             Text(text = "Nome")
-        }
+        },
+        isError = isError
     )
 }
