@@ -13,7 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
@@ -54,9 +58,15 @@ fun SimpleOutlineTextField(padding: Modifier) {
             },
             isError = isError1,
             singleLine = true,
+            textStyle = TextStyle(
+                color = Color.Blue,
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
+            )
         )
         OutlinedTextField(
-            modifier = Modifier.focusRequester(focusRequester2)
+            modifier = Modifier
+                .focusRequester(focusRequester2)
                 .onFocusChanged {focusState ->
                     isSecondFocused = focusState.isFocused
                     if (focusState.isFocused){
@@ -71,6 +81,11 @@ fun SimpleOutlineTextField(padding: Modifier) {
                 Text(text = "Sobrenome")
             },
             singleLine = true,
+            textStyle = TextStyle(
+                color = Color.Blue,
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
+            )
         )
     }
 }
