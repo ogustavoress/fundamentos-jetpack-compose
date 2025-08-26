@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ogustavoress.com.github.fundamentos_jetpack_compose.componentes.SimpleTextField
 import ogustavoress.com.github.fundamentos_jetpack_compose.ui.theme.FundamentosjetpackcomposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,8 +42,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackcomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CardMensagem(Modifier.padding(innerPadding))
-
+                    SimpleTextField(Modifier.padding(innerPadding))
                 }
             }
         }
