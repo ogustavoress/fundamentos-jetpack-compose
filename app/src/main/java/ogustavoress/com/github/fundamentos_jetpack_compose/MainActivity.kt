@@ -41,11 +41,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackcomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TextoCustomizado(
-                        "Primeira função composable",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                    Inicial(Modifier.padding(innerPadding))
+                    CardMensagem(Modifier.padding(innerPadding))
 
                 }
             }
