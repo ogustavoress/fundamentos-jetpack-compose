@@ -10,6 +10,38 @@ fun SimpleButton(count: Int, onClick : () -> Unit) {
     }
 }
 
+@Composable
+fun StyleButton(count: Int, onClick: () -> Unit) {
+    Button(
+        onClick = onClick, modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
+        shape = MaterialTheme.shapes.large,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(color = 0xFF1976D2),
+            contentColor = Color.White
+        ),
+        elevation = ButtonDefaults.buttonElevation(
+            defaultElevation = 6.dp,
+            pressedElevation = 8.dp
+        )
+    ) {
+        Text(
+            text = "Confirmar",
+            fontSize = 18.sp,
+            color = Color.White,
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PreviewStyleButton() {
+    var count by remember { mutableStateOf(0) }
+    StyleButton(count = count, onClick = { count++ })
+}
+
 @Preview
 @Composable
 fun InitialScreen(modifier: Modifier = Modifier) {
@@ -29,6 +61,6 @@ fun InitialScreen(modifier: Modifier = Modifier) {
                 textAlign = TextAlign.Center
             )
         }
-        SimpleButton(count = count, onClick = {count++})
+        StyleButton(count = count, onClick = {count++})
     }
 }
