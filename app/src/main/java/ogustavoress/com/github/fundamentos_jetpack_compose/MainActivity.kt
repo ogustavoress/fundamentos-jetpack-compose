@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FundamentosjetpackcomposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    SimpleOutlineTextField(Modifier.padding(innerPadding))
+                    InitialScreen(Modifier.padding(innerPadding))
                 }
             }
         }
