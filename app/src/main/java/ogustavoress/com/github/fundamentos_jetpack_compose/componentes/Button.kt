@@ -1,8 +1,8 @@
 @Preview
 @Composable
-fun SimpleButton() {
+fun SimpleButton(count: Int, onClick : () -> Unit) {
     Button(
-        onClick = { /*TODO*/ }, modifier = Modifier
+        onClick = onClick, modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
@@ -13,6 +13,8 @@ fun SimpleButton() {
 @Preview
 @Composable
 fun InitialScreen(modifier: Modifier = Modifier) {
+    var count by remember {mutableStateOf(0)}
+
     Column(modifier = modifier.fillMaxSize()) {
         // Content
         Column(
@@ -21,12 +23,12 @@ fun InitialScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Quantidade de cliques",
+                text = "Quantidade de cliques : $count",
                 fontSize = 20.sp,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
         }
-        SimpleButton()
+        SimpleButton(count = count, onClick = {count++})
     }
 }
